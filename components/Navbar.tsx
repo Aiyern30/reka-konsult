@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex flex-wrap items-center justify-between px-4 lg:px-10 py-4 bg-white shadow-lg sticky top-0 z-50 text-black">
-      <a href="#" className="text-[20px] lg:text-[32px] font-semibold">
+      <a href="/" className="text-[20px] lg:text-[32px] font-semibold">
         Reka Konsult
       </a>
 
@@ -31,13 +31,13 @@ const Navbar = () => {
       >
         <ul className="flex flex-col lg:flex-row lg:space-x-14 space-y-4 lg:space-y-0 text-[18px] lg:items-center">
           <li className="hover:text-blue-500 hover:font-semibold">
-            <a href="#aboutUs">About</a>
+            {/* <a href="#aboutUs">About</a> */}
           </li>
           <li className="hover:text-blue-500 hover:font-semibold">
             <a href="/Projects">Projects</a>
           </li>
           <li className="hover:text-blue-500 hover:font-semibold">
-            <a href="#howItWorks">How it works</a>
+            {/* <a href="#howItWorks">How it works</a> */}
           </li>
         </ul>
       </div>
