@@ -96,7 +96,7 @@ export default function Home() {
           <div className="grid gap-y-8 gap-x-16 sm:grid-cols-1 lg:grid-cols-2 pt-4">
             <div className="flex flex-col justify-center items-center text-center">
               <Avatar className="w-80 h-80 border-4 border-black mb-4">
-                <AvatarImage src="/user1.png" />
+                <AvatarImage src="/User1.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <div className="font-bold text-xl lg:text-2xl mb-2">
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center items-center text-center">
               <Avatar className="w-80 h-80 border-4 border-black mb-4">
-                <AvatarImage src="/user2.png" />
+                <AvatarImage src="/User2.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <div className="font-bold text-xl lg:text-2xl mb-2">

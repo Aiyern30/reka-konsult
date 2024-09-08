@@ -1,4 +1,5 @@
 "use client";
+import { FiMenu } from "react-icons/fi";
 
 import React, { useState } from "react";
 
@@ -20,7 +21,7 @@ const Navbar = () => {
         className="block lg:hidden text-xl px-4 py-2 hover:outline-none"
         onClick={toggleMenu}
       >
-        ☰
+        <FiMenu />
       </button>
 
       {/* Menu Items */}

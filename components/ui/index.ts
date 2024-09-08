@@ -7,3 +7,4 @@ export * from "./Card";
 export * from "./Hover-card";
 export * from "./Input";
 export * from "./Label";
+export * from "./Scroll-area";
