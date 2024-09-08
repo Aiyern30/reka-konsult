@@ -14,19 +14,23 @@ import {
 } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const Projects = () => {
+
+  const router = useRouter();
+
   return (
     <div
       className={cn(
         "bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg",
-        "p-4"
+        "p-4 m-4"
       )}
     >
       <Accordion type="multiple" defaultValue={["item-1", "item-2"]}>
         <AccordionItem value="item-1">
           <AccordionTrigger>List of Past Project Undertaken</AccordionTrigger>
-          <AccordionContent className="p-4">
+          <AccordionContent >
             <div className="flex flex-col gap-4 items-center justify-center">
               <div className="grid gap-y-8 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
                 <Card className="flex flex-col w-80">
@@ -58,7 +62,7 @@ const Projects = () => {
                     </div>
                   </CardContent>
                   <CardFooter className="mt-auto">
-                    <Button>View Project</Button>
+                    <Button onClick={()=> router.push("/Projects/Featured")}>View Project</Button>
                   </CardFooter>
                 </Card>
 
@@ -133,7 +137,7 @@ const Projects = () => {
 
         <AccordionItem value="item-2">
           <AccordionTrigger>Registration with Boards</AccordionTrigger>
-          <AccordionContent className="p-4">
+          <AccordionContent>
             <div className="flex flex-col gap-4 items-center justify-center w-full">
               <div className="grid gap-y-8 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
                 <Card className="w-full h-full">
