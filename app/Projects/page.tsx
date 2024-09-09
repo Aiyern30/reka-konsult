@@ -17,7 +17,6 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 const Projects = () => {
-
   const router = useRouter();
 
   return (
@@ -27,10 +26,14 @@ const Projects = () => {
         "p-4 m-4"
       )}
     >
-      <Accordion type="multiple" defaultValue={["item-1", "item-2"]}>
+      <Accordion
+        type="multiple"
+        defaultValue={["item-1", "item-2"]}
+        className="space-y-5"
+      >
         <AccordionItem value="item-1">
           <AccordionTrigger>List of Past Project Undertaken</AccordionTrigger>
-          <AccordionContent >
+          <AccordionContent>
             <div className="flex flex-col gap-4 items-center justify-center">
               <div className="grid gap-y-8 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
                 <Card className="flex flex-col w-80">
@@ -40,7 +43,7 @@ const Projects = () => {
                   <CardContent className="flex-1 px-2">
                     <div className="relative w-full h-60 mb-4">
                       <Image
-                        src="/Airport Terminal Buildings.jpg"
+                        src="/Featured/Airport Terminal Buildings/Airport Terminal Buildings.jpg"
                         fill
                         alt="Airport Terminal Buildings"
                         className="rounded-md"
@@ -62,7 +65,15 @@ const Projects = () => {
                     </div>
                   </CardContent>
                   <CardFooter className="mt-auto">
-                    <Button onClick={()=> router.push("/Projects/Featured")}>View Project</Button>
+                    <Button
+                      onClick={() =>
+                        router.push(
+                          "/Projects/Featured?tab=Airport Terminal Buildings"
+                        )
+                      }
+                    >
+                      View Project
+                    </Button>
                   </CardFooter>
                 </Card>
 
@@ -73,7 +84,7 @@ const Projects = () => {
                   <CardContent className="flex-1 px-2">
                     <div className="relative w-full h-60 mb-4">
                       <Image
-                        src="/Airport Terminal Buildings.jpg"
+                        src="/Featured/Airport Facilities/aircargonwalkway.jpg"
                         fill
                         alt="Airport Terminal Buildings"
                         className="rounded-md"
@@ -97,7 +108,13 @@ const Projects = () => {
                     </div>
                   </CardContent>
                   <CardFooter className="mt-auto">
-                    <Button>View Project</Button>
+                    <Button
+                      onClick={() =>
+                        router.push("/Projects/Featured?tab=Airport Facilities")
+                      }
+                    >
+                      View Project
+                    </Button>
                   </CardFooter>
                 </Card>
 
@@ -108,7 +125,7 @@ const Projects = () => {
                   <CardContent className="flex-1 px-2">
                     <div className="relative w-full h-60 mb-4">
                       <Image
-                        src="/Other Projects Taken.png"
+                        src="/Featured/Other Taken Projects/AL AMANIAH front.jpg"
                         fill
                         alt="Other Projects Undertaken"
                         className="rounded-md"
@@ -127,7 +144,15 @@ const Projects = () => {
                     </div>
                   </CardContent>
                   <CardFooter className="mt-auto">
-                    <Button>View Project</Button>
+                    <Button
+                      onClick={() =>
+                        router.push(
+                          "/Projects/Featured?tab=Other Projects Undertaken"
+                        )
+                      }
+                    >
+                      View Project
+                    </Button>{" "}
                   </CardFooter>
                 </Card>
               </div>
