@@ -32,7 +32,7 @@ const Navbar = () => {
       >
         <ul className="flex flex-col lg:flex-row lg:space-x-14 space-y-4 lg:space-y-0 text-[18px] lg:items-center">
           <li className="hover:text-blue-500 hover:font-semibold">
-            {/* <a href="#aboutUs">About</a> */}
+            <a href="/Corporate-Information">Corporate Information</a>
           </li>
           <li className="hover:text-blue-500 hover:font-semibold">
             <a href="/Projects">Projects</a>
