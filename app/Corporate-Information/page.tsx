@@ -45,7 +45,7 @@ const CorporatePage = () => {
       ].map((item, index) => (
         <Card
           key={index}
-          className="flex items-center space-x-4 mb-4 p-5 border border-gray-300 bg-white dark:bg-gray-800 hover:shadow-none hover:scale-100 transition-none"
+          className="flex flex-col md:flex-row items-center space-y-4 md:space-x-4 md:space-y-0 mb-4 p-5 border border-gray-300 bg-white dark:bg-gray-800 hover:shadow-none hover:scale-100 transition-none"
         >
           <Image
             src={item.imgSrc}
@@ -54,10 +54,7 @@ const CorporatePage = () => {
             height={150}
             className="flex-shrink-0"
           />
-          <div
-            className="flex flex-col justify-center"
-            style={{ width: "calc(100% - 150px)" }}
-          >
+          <div className="flex flex-col justify-center w-full md:w-auto">
             <div className="font-bold">{item.title}</div>
             {item.date && <div>{item.date}</div>}
             {item.sstNo && <div>{item.sstNo}</div>}
