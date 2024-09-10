@@ -1,6 +1,6 @@
 "use client";
 import { FiMenu } from "react-icons/fi";
-
+import Image from "next/image";
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-wrap items-center justify-between px-4 lg:px-10 py-4 bg-white shadow-lg sticky top-0 z-50 text-black">
       <a href="/" className="text-[20px] lg:text-[32px] font-semibold">
-        Reka Konsult
+        <Image src={"/rk logo.jpg"} alt="RK Logo" width={150} height={150} />
       </a>
 
       {/* Mobile Menu Button */}
@@ -32,13 +32,16 @@ const Navbar = () => {
       >
         <ul className="flex flex-col lg:flex-row lg:space-x-14 space-y-4 lg:space-y-0 text-[18px] lg:items-center">
           <li className="hover:text-blue-500 hover:font-semibold">
+            <a href="/Directors">Directors</a>
+          </li>
+          <li className="hover:text-blue-500 hover:font-semibold">
             <a href="/Corporate-Information">Corporate Information</a>
           </li>
           <li className="hover:text-blue-500 hover:font-semibold">
             <a href="/Projects">Projects</a>
           </li>
           <li className="hover:text-blue-500 hover:font-semibold">
-            {/* <a href="#howItWorks">How it works</a> */}
+            <a href="/ContactUs">Contact Us</a>
           </li>
         </ul>
       </div>

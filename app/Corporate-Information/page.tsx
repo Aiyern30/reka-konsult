@@ -60,6 +60,7 @@ const CorporatePage = () => {
           >
             <div className="font-bold">{item.title}</div>
             {item.date && <div>{item.date}</div>}
+            {item.sstNo && <div>{item.sstNo}</div>}
             {item.regNo && <div>{item.regNo}</div>}
             {item.certNo && <div>{item.certNo}</div>}
             {item.validity && <div>{item.validity}</div>}

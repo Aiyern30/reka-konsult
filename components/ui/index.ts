@@ -10,3 +10,4 @@ export * from "./Label";
 export * from "./Scroll-area";
 export * from "./Tabs";
 export * from "./Navigation-menu";
+export * from "./Textarea";
