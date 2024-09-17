@@ -2,20 +2,12 @@
 
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardFooter,
-  Input,
-  Label,
-  Textarea,
-} from "@/components/ui";
+
 import dynamic from "next/dynamic";
 
 const MapComponent = dynamic(() => import("./MapComponents"), { ssr: false });
 
-const companyCoords = { lat: 3.139, lon: 101.6869 };
+const companyCoords = { lat: 3.07374, lon: 101.65811 };
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -58,36 +50,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <h2 className="text-4xl font-bold">Contact Us</h2>
-          <p className="text-lg text-center max-w-md">
-            Need to get in touch with us? Fill out the form with your inquiry,
-            and we'll get back to you as soon as possible.
-          </p>
-          <div className="flex flex-col space-y-1">
-            <a
-              href="tel:+60378741169"
-              className="text-blue-500 hover:underline"
-            >
-              +603 7874 1169
-            </a>
-            <a
-              href="tel:+60378737568"
-              className="text-blue-500 hover:underline"
-            >
-              +603 7873 7568
-            </a>
-            <a
-              href="mailto:rekakon@gmail.com"
-              className="text-blue-500 hover:underline"
-            >
-              rekakon@gmail.com
-            </a>
-          </div>
-        </div>
-
-        <Card className="w-full max-w-lg mx-auto shadow-lg border border-gray-300 bg-white dark:bg-gray-800 hover:shadow-none hover:scale-100 transition-none">
+      {/* <Card className="w-full max-w-lg mx-auto shadow-lg border border-gray-300 bg-white dark:bg-gray-800 hover:shadow-none hover:scale-100 transition-none">
           <CardContent className="p-6">
             <form onSubmit={handleSubmit}>
               <div className="grid w-full gap-6">
@@ -142,11 +105,44 @@ export default function ContactForm() {
               </CardFooter>
             </form>
           </CardContent>
-        </Card>
-      </div>
-      <div className="w-full h-80 mt-6">
+        </Card> */}
+      <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <h2 className="text-4xl font-bold">Contact Us</h2>
+          <p className="text-lg text-center max-w-md">
+            Need to get in touch with us? Fill out the form with your inquiry,
+            and we'll get back to you as soon as possible.
+          </p>
+          <div className="flex flex-col space-y-1 text-center">
+            <a
+              href="tel:+60378741169"
+              className="text-blue-500 hover:underline"
+            >
+              +603 7874 1169
+            </a>
+            <a
+              href="tel:+60378737568"
+              className="text-blue-500 hover:underline"
+            >
+              +603 7873 7568
+            </a>
+            <a
+              href="mailto:rekakon@gmail.com"
+              className="text-blue-500 hover:underline"
+            >
+              rekakon@gmail.com
+            </a>
+            <div className="text-blue-500 ">
+              No. 151-2-6A, Mutiara Puchong Business Centre, Batu 6 1/2, Jalan
+              Puchong, 58200 Kuala Lumpur.
+            </div>
+          </div>
+        </div>
         <MapComponent lat={companyCoords.lat} lon={companyCoords.lon} />
       </div>
+      {/* <div className="w-full h-80 mt-6">
+        <MapComponent lat={companyCoords.lat} lon={companyCoords.lon} />
+      </div> */}
     </>
   );
 }
