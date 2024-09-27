@@ -115,16 +115,10 @@ export default function ContactForm() {
           </p>
           <div className="flex flex-col space-y-1 text-center">
             <a
-              href="tel:+60378741169"
+              href="tel:++601115260030"
               className="text-blue-500 hover:underline"
             >
-              +603 7874 1169
-            </a>
-            <a
-              href="tel:+60378737568"
-              className="text-blue-500 hover:underline"
-            >
-              +603 7873 7568
+              +601 1152 60030
             </a>
             <a
               href="mailto:rekakon@gmail.com"
@@ -132,10 +126,16 @@ export default function ContactForm() {
             >
               rekakon@gmail.com
             </a>
-            <div className="text-blue-500 ">
-              No. 151-2-6A, Mutiara Puchong Business Centre, Batu 6 1/2, Jalan
-              Puchong, 58200 Kuala Lumpur.
-            </div>
+            <a
+              href="https://www.google.com.my/maps/search/+No.+151-2-6A,+Mutiara+Puchong+Business+Centre,+Batu+6+1%2F2,+Jalan+++++++++++++++++Puchong,+58200+Kuala+Lumpur./@3.074075,101.6565562,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              className="text-blue-500 hover:underline"
+            >
+              <div className="text-blue-500 ">
+                No. 151-2-6A, Mutiara Puchong Business Centre, Batu 6 1/2, Jalan
+                Puchong, 58200 Kuala Lumpur.
+              </div>
+            </a>
           </div>
         </div>
         <MapComponent lat={companyCoords.lat} lon={companyCoords.lon} />

@@ -57,9 +57,10 @@ export default function DirectorSection() {
           </CardHeader>
           <CardContent>
             {user.description.map((desc, index) => (
-              <li className="text-sm mt-2 text-justify" key={index}>
+              //change to li for .
+              <div className="text-sm mt-2 text-justify" key={index}>
                 {desc}
-              </li>
+              </div>
             ))}
             <div
               className={`grid gap-5 mt-5 ${

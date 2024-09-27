@@ -50,8 +50,8 @@ const CorporatePage = () => {
           <Image
             src={item.imgSrc}
             alt={item.title}
-            width={150}
-            height={150}
+            width={item.title === "LEMBAGA ARKITEK MALAYSIA (LAM)" ? 100 : 150}
+            height={item.title === "LEMBAGA ARKITEK MALAYSIA (LAM)" ? 100 : 150}
             className="flex-shrink-0"
           />
           <div className="flex flex-col justify-center w-full md:w-auto">
