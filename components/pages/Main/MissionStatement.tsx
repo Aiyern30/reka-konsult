@@ -12,8 +12,8 @@ const MissionStatement = () => {
       <Image
         src="/Mission-Statement.png"
         alt=""
-        layout="fill"
-        objectFit="contain"
+        fill
+        style={{ objectFit: "contain" }}
         className="w-auto h-full"
       />
     </section>
