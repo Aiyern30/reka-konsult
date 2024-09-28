@@ -34,7 +34,7 @@ const CorporatePage = () => {
         {
           imgSrc: "/Corporate_Information/LAM.png",
           title: "LEMBAGA ARKITEK MALAYSIA (LAM)",
-          certNo: "No Perakuan: 14/9/2024",
+          certNo: "No Perakuan: 149/2024",
           regNo: "Registration No: BC/A 127",
         },
         {
