@@ -1,4 +1,5 @@
 import { Building2, Briefcase, Calendar } from "lucide-react";
+import Image from "next/image";
 import {
   Avatar,
   AvatarFallback,
@@ -51,8 +52,8 @@ const UserDetails: Director[] = [
       "1996-1997 worked for RDP Architect East Sheen London, United Kingdom in various drawing documentations.",
       "1997-1999 joined Antara Akitek Sdn Bhd as Project Architect and worked on design detailing, authorities submission and site supervision for project of 180 units condominium 'Villa Makmur' at Segambut, 6 storey factory for Tan Chong Tradings at Segambut, factory cum office facilities at Senai Industrial Park.",
       "1999-2002 joined OST Architecture As Design/Project Architect and involved extensively on Housing and Condo. Projects for Perumahan Kinrara Berhad (PKB), Guthrie Development Holding Bhd (GDHB).",
-      "June 2002 joined Arkitek Rekakonsult Sdn Bhd (previously known as Reka Konsult) as Senior Architect and lead the technical team in day to day running of all projects in hand.",
-      "Nov 2019, Director of Arkitek Rekakonsult Sdn Bhd",
+      "2002 2002 joined Arkitek Rekakonsult Sdn Bhd (previously known as Reka Konsult) as Senior Architect and lead the technical team in day to day running of all projects in hand.",
+      "2019 Nov 2019, Director of Arkitek Rekakonsult Sdn Bhd",
     ],
     imagePictureUrl: [
       "/Directors/mazli with bomba.jpg",
@@ -106,9 +107,10 @@ type DirectorCardProps = {
 
 function DirectorCard({ director }: DirectorCardProps) {
   return (
-    <Card className="overflow-hidden border shadow-lg hover:shadow-xl hover:scale-100">
-      <div className="grid md:grid-cols-3 gap-0">
-        <div className="md:col-span-1 bg-gradient-to-b from-primary/5 to-primary/10 p-6 flex flex-col items-center justify-start border-r border-border/50">
+    <Card className="overflow-hidden border shadow-lg hover:shadow-xl hover:scale-100 h-full">
+      <div className="grid md:grid-cols-3 gap-0 h-full">
+        {/* Left side - Full height */}
+        <div className="md:col-span-1 bg-gradient-to-b from-primary/5 to-primary/10 p-6 flex flex-col items-center justify-start border-r border-border/50 h-full">
           <Badge className="mb-4" variant="outline">
             {director.role}
           </Badge>
@@ -125,7 +127,7 @@ function DirectorCard({ director }: DirectorCardProps) {
             {director.name}
           </h3>
 
-          <div className="mt-4 w-full">
+          <div className="mt-4 w-full flex-grow">
             <h4 className="text-sm font-medium text-muted-foreground mb-2">
               Areas of Expertise
             </h4>
@@ -139,8 +141,9 @@ function DirectorCard({ director }: DirectorCardProps) {
           </div>
         </div>
 
-        <div className="md:col-span-2 p-0">
-          <Tabs defaultValue="career" className="w-full">
+        {/* Right side */}
+        <div className="md:col-span-2 p-0 h-full flex flex-col">
+          <Tabs defaultValue="career" className="w-full flex-grow">
             <TabsList className="w-full grid grid-cols-2 rounded-none border-b">
               <TabsTrigger value="career" className="rounded-none">
                 Career History
@@ -150,7 +153,8 @@ function DirectorCard({ director }: DirectorCardProps) {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="career" className="p-6">
+            {/* Career History */}
+            <TabsContent value="career" className="p-6 flex-grow">
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-primary" />
@@ -162,6 +166,21 @@ function DirectorCard({ director }: DirectorCardProps) {
                     <TimelineItem key={i} description={desc} />
                   ))}
                 </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="projects" className="p-6 flex-grow">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {director.imagePictureUrl.map((img, i) => (
+                  <Image
+                    key={i}
+                    src={img}
+                    alt={`Project ${i + 1}`}
+                    width={400} // Adjust width as needed
+                    height={160} // Adjust height as needed
+                    className="rounded-lg shadow-md w-full h-40 object-cover"
+                  />
+                ))}
               </div>
             </TabsContent>
           </Tabs>
