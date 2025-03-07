@@ -6,7 +6,7 @@ interface GoogleMapsProps {
   lat: number;
   lon: number;
   address?: string;
-  mapStyle: google.maps.MapTypeStyle[];
+  mapStyle?: google.maps.MapTypeStyle[];
 }
 
 const GoogleMaps: React.FC<GoogleMapsProps> = ({

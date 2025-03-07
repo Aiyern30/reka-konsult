@@ -1,16 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { Phone, Mail, MapPin, Clock, Loader2, Building } from "lucide-react";
-
-const MapComponent = dynamic(() => import("./MapComponents"), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center h-[400px] bg-slate-100 dark:bg-slate-800 rounded-lg">
-      <Loader2 className="h-8 w-8 text-primary animate-spin" />
-    </div>
-  ),
-});
+import { Phone, Mail, MapPin, Clock, Building } from "lucide-react";
+import GoogleMaps from "@/components/GoogleMaps";
 
 const companyCoords = { lat: 3.07374, lon: 101.65811 };
 
@@ -123,7 +114,14 @@ export default function ContactPage() {
           {/* Map */}
           <div className="h-[500px] w-full overflow-hidden relative">
             <div className="absolute inset-0">
-              <MapComponent lat={companyCoords.lat} lon={companyCoords.lon} />
+              {/* <MapComponent lat={companyCoords.lat} lon={companyCoords.lon} /> */}
+              <GoogleMaps
+                lat={companyCoords.lat}
+                lon={companyCoords.lon}
+                address="No. 151-2-6A, Mutiara Puchong Business Centre, Batu 6 1/2,
+                    Jalan Puchong, 58200 Kuala Lumpur."
+                // mapStyle={styles["hybrid"]}
+              />
             </div>
           </div>
         </div>
