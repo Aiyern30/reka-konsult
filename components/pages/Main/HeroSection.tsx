@@ -12,8 +12,10 @@ import {
   Compass,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -85,11 +87,20 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 mt-6"
         >
-          <Button size="lg" className="px-8">
+          <Button
+            size="lg"
+            className="px-8"
+            onClick={() => router.push("/Projects")}
+          >
             Our Projects
           </Button>
-          <Button size="lg" variant="outline" className="group">
-            Contact Us{" "}
+          <Button
+            size="lg"
+            variant="outline"
+            className="group"
+            onClick={() => router.push("/ContactUs")}
+          >
+            Contact Us
             <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </motion.div>
