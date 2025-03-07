@@ -18,6 +18,8 @@ const Projects = () => {
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl mb-2">
             Our Projects & Certifications
           </h1>
+          <div className="h-1 w-32 bg-primary mx-auto mb-6"></div>
+
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
             Explore our portfolio of successful projects and professional
             certifications that demonstrate our expertise and qualifications.
