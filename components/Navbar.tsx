@@ -113,7 +113,7 @@ const Navbar = () => {
               key={link.path}
               href={link.path}
               className={`block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 ${
-                pathname === link.path
+                pathname.startsWith(link.path)
                   ? "text-primary bg-slate-50 dark:bg-slate-800/60 font-semibold"
                   : "text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/60 hover:text-primary"
               }`}
