@@ -102,11 +102,19 @@ const GoogleMaps: React.FC<GoogleMapsProps> = ({
           .then(() => {
             toast("Copied!", {
               description: "Address copied to clipboard.",
+              style: {
+                background: "#5CE65C",
+              },
+              className: "text-white",
             });
           })
           .catch(() => {
             toast("Error!", {
               description: "Failed to copy address.",
+              style: {
+                background: "#5CE65C",
+              },
+              className: "text-white",
             });
           });
       });

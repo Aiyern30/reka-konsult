@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <div
       className={cn(
-        "min-h-screen bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg p-4"
+        "h-[calc(100vh-80px)] bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg p-4"
       )}
     >
       <ContactForm />
