@@ -13,7 +13,7 @@ import { Calendar, Award, FileCheck, ExternalLink } from "lucide-react";
 const certificates = [
   {
     title: "Registration with Lembaga Arkitek Malaysia",
-    imgSrc: "/2024_LAM ARKSB CERTIFICATE.png",
+    imgSrc: "/2025_LAM ARKSB_ENG.png",
     altText: "Registration with Lembaga Arkitek Malaysia",
     organization: "Lembaga Arkitek Malaysia",
     type: "Professional License",

@@ -6,9 +6,9 @@ import {
   Card,
   CardContent,
   Badge,
-  Button,
+  // Button,
 } from "@/components/ui/";
-import { Building2, Briefcase, ChevronRight } from "lucide-react";
+import { Building2, Briefcase } from "lucide-react";
 
 export default function DirectorSection() {
   return (
@@ -103,11 +103,11 @@ function DirectorCard({
       <CardContent className="flex flex-col justify-center text-center p-6 md:p-8 mt-10">
         <h3 className="text-2xl font-bold mb-3">{name}</h3>
         <p className="text-muted-foreground mb-4 leading-relaxed">{bio}</p>
-        <div className="mt-auto">
+        {/* <div className="mt-auto">
           <Button className="inline-flex items-center text-sm font-medium">
             View Portfolio <ChevronRight className="ml-1 h-4 w-4" />
           </Button>
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );
