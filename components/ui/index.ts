@@ -3,6 +3,7 @@ export * from "./Alert";
 export * from "./Alert-dialog";
 export * from "./Avatar";
 export * from "./Button";
+export * from "./Badge";
 export * from "./Card";
 export * from "./Hover-card";
 export * from "./Input";
