@@ -38,9 +38,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Directors", path: "/Directors" },
-    { name: "Corporate Information", path: "/Corporate" },
+    { name: "Corporate Information", path: "/Corporate-Information" },
     { name: "Projects", path: "/Projects" },
-    { name: "Contact Us", path: "/Contact" },
+    { name: "Contact Us", path: "/ContactUs" },
   ];
 
   return (
