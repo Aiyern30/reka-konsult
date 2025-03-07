@@ -73,43 +73,42 @@ function DirectorCard({
   bio,
 }: DirectorCardProps) {
   return (
-    <Card className="overflow-hidden border-0 shadow-lg transition-all duration-300 hover:shadow-xl group hover:scale-100">
-      <div className="grid md:grid-cols-5 gap-6">
-        <div className="md:col-span-2 relative">
-          <div className="aspect-square overflow-hidden bg-muted/20">
-            <Avatar className="w-full h-full rounded-none">
-              <AvatarImage
-                src={image}
-                alt={name}
-                className="object-cover transition-transform duration-500 "
-              />
-              <AvatarFallback className="w-full h-full rounded-none text-2xl">
-                {name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </AvatarFallback>
-            </Avatar>
-          </div>
-          <Badge
-            className="absolute top-4 left-4 flex items-center gap-1.5"
-            variant="secondary"
-          >
+    <Card className="overflow-hidden border-0 shadow-lg transition-all duration-300 hover:shadow-xl group hover:scale-100 relative">
+      {/* Image at the top */}
+      <div className="relative w-full">
+        <Avatar className="w-full max-w-[300px] mx-auto h-auto rounded-lg overflow-hidden">
+          <AvatarImage
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover transition-transform duration-500"
+          />
+          <AvatarFallback className="w-full h-full rounded-lg text-2xl">
+            {name
+              .split(" ")
+              .map((n) => n[0])
+              .join("")}
+          </AvatarFallback>
+        </Avatar>
+
+        {/* Badge centered below the image */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6">
+          <Badge className="px-3 py-1 flex items-center gap-1">
             {icon}
             <span>{iconLabel}</span>
           </Badge>
         </div>
-
-        <CardContent className="md:col-span-3 flex flex-col justify-center p-6 md:p-8">
-          <h3 className="text-2xl font-bold mb-3">{name}</h3>
-          <p className="text-muted-foreground mb-4 leading-relaxed">{bio}</p>
-          <div className="mt-auto">
-            <Button className="inline-flex items-center text-sm font-medium hover:underline">
-              View Portfolio <ChevronRight className="ml-1 h-4 w-4" />
-            </Button>
-          </div>
-        </CardContent>
       </div>
+
+      {/* Content */}
+      <CardContent className="flex flex-col justify-center text-center p-6 md:p-8 mt-10">
+        <h3 className="text-2xl font-bold mb-3">{name}</h3>
+        <p className="text-muted-foreground mb-4 leading-relaxed">{bio}</p>
+        <div className="mt-auto">
+          <Button className="inline-flex items-center text-sm font-medium">
+            View Portfolio <ChevronRight className="ml-1 h-4 w-4" />
+          </Button>
+        </div>
+      </CardContent>
     </Card>
   );
 }
