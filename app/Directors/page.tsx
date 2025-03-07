@@ -6,8 +6,7 @@ const DirectorsPage = () => {
   return (
     <div
       className={cn(
-        "h-[calc(100vh-136px)] bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg",
-        "p-4 m-4"
+        "min-h-screen bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg p-4"
       )}
     >
       <DirectorSection />

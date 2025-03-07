@@ -14,7 +14,7 @@ export default function DirectorSection() {
   return (
     <section
       id="directors"
-      className="py-24 px-4 lg:px-10 bg-gradient-to-b from-background to-muted/30"
+      className=" bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg p-4"
     >
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
