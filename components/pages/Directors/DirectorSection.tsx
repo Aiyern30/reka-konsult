@@ -213,7 +213,7 @@ function TimelineItem({ description }: TimelineItemProps) {
 
   return (
     <div className="relative">
-      <div className="absolute -left-9 p-1 bg-background border-2 border-primary/20 rounded-full">
+      <div className="absolute -left-11 p-1 bg-background border-2 border-primary/20 rounded-full">
         <div className="bg-primary/10 p-1 rounded-full">
           <Calendar className="h-4 w-4 text-primary" />
         </div>
