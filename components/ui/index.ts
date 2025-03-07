@@ -13,3 +13,4 @@ export * from "./Scroll-area";
 export * from "./Tabs";
 export * from "./Navigation-menu";
 export * from "./Textarea";
+export * from "./Sonner";
