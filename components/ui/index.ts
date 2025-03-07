@@ -5,6 +5,7 @@ export * from "./Avatar";
 export * from "./Button";
 export * from "./Badge";
 export * from "./Card";
+export * from "./Dialog";
 export * from "./Hover-card";
 export * from "./Input";
 export * from "./Label";
