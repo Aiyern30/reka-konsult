@@ -27,6 +27,8 @@ export default function DirectorSection() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             The Directors
           </h2>
+          <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
+
           <p className="text-muted-foreground max-w-2xl">
             Meet the visionary architects leading our firm with decades of
             combined experience in the industry.
