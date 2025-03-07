@@ -15,12 +15,10 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Add shadow on scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -53,7 +51,6 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
-          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="block h-12 w-auto">
               <Image
@@ -67,27 +64,25 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 className={`relative px-1 py-2 text-base font-medium transition-colors duration-200 ${
-                  pathname === link.path
+                  pathname.startsWith(link.path)
                     ? "text-primary font-semibold"
                     : "text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary"
                 }`}
               >
                 {link.name}
-                {pathname === link.path && (
+                {pathname.startsWith(link.path) && (
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
                 )}
               </Link>
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center lg:hidden">
             <button
               onClick={toggleMenu}
@@ -105,7 +100,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
           isMenuOpen
