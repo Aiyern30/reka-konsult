@@ -1,4 +1,4 @@
-import { Building2, Briefcase, Calendar } from "lucide-react";
+import { Building2, Briefcase, Calendar, ImageIcon } from "lucide-react";
 import Image from "next/image";
 import {
   Avatar,
@@ -6,10 +6,6 @@ import {
   AvatarImage,
   Badge,
   Card,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
 } from "@/components/ui";
 
 type Director = {
@@ -33,7 +29,7 @@ const UserDetails: Director[] = [
       "1983, joined T.R.Hamzah & Yeang Sdn. Bhd. Worked on projects ranging from High Rise offices to Resorts. He was also the Project Architect for Menara Boustead and Plaza Atrium.",
       "1987, joined Kumpulan Perunding as Manager for the Kuala Lumpur office. He worked on projects ranging from Renovations for Banks to Housing, Apartments, Factories and Schools.",
       "1990 formed Reka Konsult and 1995 formed a partnership firm.",
-      "2010 - Present, Director of Arkitek Rekakonsult Sdn Bhd.",
+      "2010 Present, Director of Arkitek Rekakonsult Sdn Bhd.",
     ],
     imagePictureUrl: ["/Directors/roof of mtb.jpg"],
     expertise: [
@@ -107,7 +103,7 @@ type DirectorCardProps = {
 
 function DirectorCard({ director }: DirectorCardProps) {
   return (
-    <Card className="overflow-hidden border shadow-lg hover:shadow-xl hover:scale-100 h-full">
+    <Card className="overflow-hidden border shadow-lg hover:shadow-xl transition-all duration-300 h-full hover:scale-100">
       <div className="grid md:grid-cols-3 gap-0 h-full">
         {/* Left side - Full height */}
         <div className="md:col-span-1 bg-gradient-to-b from-primary/5 to-primary/10 p-6 flex flex-col items-center justify-start border-r border-border/50 h-full">
@@ -141,49 +137,61 @@ function DirectorCard({ director }: DirectorCardProps) {
           </div>
         </div>
 
-        {/* Right side */}
-        <div className="md:col-span-2 p-0 h-full flex flex-col">
-          <Tabs defaultValue="career" className="w-full flex-grow">
-            <TabsList className="w-full grid grid-cols-2 rounded-none border-b">
-              <TabsTrigger value="career" className="rounded-none">
-                Career History
-              </TabsTrigger>
-              <TabsTrigger value="projects" className="rounded-none">
-                Project Gallery
-              </TabsTrigger>
-            </TabsList>
+        {/* Right side - Content */}
+        <div className="md:col-span-2 p-6 h-full flex flex-col">
+          <div className="space-y-6 flex-grow">
+            {/* Career History Section */}
+            <div>
+              <h4 className="text-lg font-semibold flex items-center gap-2 mb-4">
+                <Calendar className="h-4 w-4 text-primary" />
+                Professional Timeline
+              </h4>
 
-            {/* Career History */}
-            <TabsContent value="career" className="p-6 flex-grow">
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-primary" />
-                  Professional Timeline
+              <div className="relative border-l-2 border-primary/20 pl-6 space-y-6">
+                {director.description.map((desc, i) => (
+                  <TimelineItem key={i} description={desc} />
+                ))}
+              </div>
+            </div>
+
+            {/* Project Gallery Section */}
+            {director.imagePictureUrl.length > 0 && (
+              <div className="pt-6 border-t border-border/50">
+                <h4 className="text-lg font-semibold flex items-center gap-2 mb-4">
+                  <ImageIcon className="h-4 w-4 text-primary" />
+                  Project Gallery
                 </h4>
 
-                <div className="relative border-l-2 border-primary/20 pl-6 space-y-6">
-                  {director.description.map((desc, i) => (
-                    <TimelineItem key={i} description={desc} />
+                <div
+                  className={`grid ${
+                    director.imagePictureUrl.length === 1
+                      ? "grid-cols-1"
+                      : "grid-cols-1 sm:grid-cols-2"
+                  } gap-4`}
+                >
+                  {director.imagePictureUrl.map((img, i) => (
+                    <div
+                      key={i}
+                      className="relative aspect-video overflow-hidden rounded-lg shadow-md group"
+                    >
+                      <Image
+                        src={img || "/placeholder.svg"}
+                        alt={`Project by ${director.name}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p className="text-white text-sm font-medium">
+                          Project Supervision
+                        </p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
-            </TabsContent>
-
-            <TabsContent value="projects" className="p-6 flex-grow">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {director.imagePictureUrl.map((img, i) => (
-                  <Image
-                    key={i}
-                    src={img}
-                    alt={`Project ${i + 1}`}
-                    width={400} // Adjust width as needed
-                    height={160} // Adjust height as needed
-                    className="rounded-lg shadow-md w-full h-40 object-cover"
-                  />
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
+            )}
+          </div>
         </div>
       </div>
     </Card>
@@ -195,7 +203,9 @@ type TimelineItemProps = {
 };
 
 function TimelineItem({ description }: TimelineItemProps) {
-  const yearMatch = description.match(/^(\d{4}(-\d{4})?|\d{4} - Present)/);
+  const yearMatch = description.match(
+    /^(\d{4}(-\d{4})?|\d{4} Present|\d{4} - Present|\d{4} \w+ \d{4})/
+  );
   const year = yearMatch ? yearMatch[0] : "";
   const content = yearMatch
     ? description.substring(year.length + 1)
