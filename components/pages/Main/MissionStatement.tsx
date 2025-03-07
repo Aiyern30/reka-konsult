@@ -258,7 +258,7 @@ interface TimelineItemProps {
 function TimelineItem({ year, title, description, icon }: TimelineItemProps) {
   return (
     <div className="relative">
-      <div className="absolute -left-10 p-1 bg-background border-2 border-primary/20 rounded-full">
+      <div className="absolute -left-14 p-1 bg-background border-2 border-primary/20 rounded-full">
         <div className="bg-primary/10 p-1.5 rounded-full text-primary">
           {icon}
         </div>
