@@ -16,7 +16,6 @@ import {
   CheckCircle,
   Users,
 } from "lucide-react";
-import Image from "next/image";
 
 export default function HistoryMissionSection() {
   return (
@@ -217,30 +216,6 @@ export default function HistoryMissionSection() {
                 </Card>
               </TabsContent>
             </Tabs>
-          </div>
-        </div>
-
-        {/* Projects Showcase */}
-        <div className="mt-24 text-center">
-          <Badge className="mb-4">Our Portfolio</Badge>
-          <h2 className="text-3xl font-bold mb-8">Notable Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {Array(3)
-              .fill(0)
-              .map((_, index) => (
-                <div
-                  key={index}
-                  className="aspect-video bg-muted/30 rounded-lg overflow-hidden relative"
-                >
-                  <Image
-                    src="/placeholder.svg"
-                    alt="Architectural project"
-                    layout="fill"
-                    objectFit="cover"
-                    className="opacity-70 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              ))}
           </div>
         </div>
       </div>
