@@ -66,10 +66,7 @@ const UserDetails: Director[] = [
 
 export default function DirectorSection() {
   return (
-    <section
-      id="directors"
-      className="py-20 px-4 lg:px-10 bg-gradient-to-b from-background to-muted/20"
-    >
+    <section id="directors" className="pb-4 ">
       <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
           <Badge

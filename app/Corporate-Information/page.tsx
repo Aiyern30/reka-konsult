@@ -79,8 +79,7 @@ export default function CorporatePage() {
   return (
     <div
       className={cn(
-        "min-h-[calc(100vh-136px)] bg-zinc-50 dark:bg-zinc-900 text-slate-950 dark:text-slate-50 transition-all",
-        "py-8 px-4 sm:px-6 lg:px-8"
+        "min-h-screen bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg p-4"
       )}
     >
       <div className="max-w-5xl mx-auto">
