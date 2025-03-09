@@ -48,7 +48,7 @@ export default function DirectorSection() {
           {/* Director 2 */}
           <DirectorCard
             name="AR. Mazli Bin Md. Lajis"
-            image="/User2.png"
+            image="/Mazli.jpg"
             icon={<Briefcase className="h-5 w-5" />}
             iconLabel="Management"
             bio="AR. Mazli Bin Md. Lajis has a rich background in architectural design and project management. From his early work at Juhari Hashim Arkitek to significant roles at RDP Architect and Antara Akitek Sdn Bhd, he has led major projects and design initiatives. He joined Arkitek Rekakonsult Sdn Bhd in 2002, where he is now a Director."

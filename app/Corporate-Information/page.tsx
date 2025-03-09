@@ -54,7 +54,7 @@ const corporateInfo = [
     title: "LEMBAGA ARKITEK MALAYSIA (LAM)",
     icon: <Award className="h-5 w-5" />,
     category: "Professional License",
-    certNo: "No Perakuan: 149/2024",
+    certNo: "No Perakuan: 271/2025",
     regNo: "Registration No: BC/A 127",
     description:
       "Professional registration with the Board of Architects Malaysia, officially recognizing our firm as a qualified architectural practice authorized to provide architectural services in Malaysia.",
