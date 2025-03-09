@@ -41,7 +41,7 @@ const UserDetails: Director[] = [
   },
   {
     name: "AR. MAZLI BIN MD. LAJIS",
-    imageURL: "/Mazli.jpg",
+    imageURL: "/Directors/Mazli.jpg",
     role: "Director",
     description: [
       "1994-1995 joined Juhari Hashim Arkitek as Assistance Architect before further studies.",
