@@ -26,7 +26,7 @@ export default function ContactPage() {
             <div className="flex items-center mb-6">
               <Building className="h-6 w-6 text-primary mr-3" />
               <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                Reka Konsult Sdn Bhd
+                Arkitek Rekakonsult Sdn Bhd
               </h2>
             </div>
 
