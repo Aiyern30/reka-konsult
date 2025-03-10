@@ -70,8 +70,8 @@ interface DirectorCardProps {
 function DirectorCard({
   name,
   image,
-  icon,
-  iconLabel,
+  // icon,
+  // iconLabel,
   bio,
 }: DirectorCardProps) {
   return (
@@ -92,13 +92,12 @@ function DirectorCard({
           </AvatarFallback>
         </Avatar>
 
-        {/* Badge centered below the image */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6">
+        {/* <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6">
           <Badge className="px-3 py-1 flex items-center gap-1">
             {icon}
             <span>{iconLabel}</span>
           </Badge>
-        </div>
+        </div> */}
       </div>
 
       {/* Content */}

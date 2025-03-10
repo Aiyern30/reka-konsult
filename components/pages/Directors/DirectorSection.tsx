@@ -121,7 +121,7 @@ function DirectorCard({ director }: DirectorCardProps) {
             {director.name}
           </h3>
 
-          <div className="mt-4 w-full flex-grow">
+          {/* <div className="mt-4 w-full flex-grow">
             <h4 className="text-sm font-medium text-muted-foreground mb-2">
               Areas of Expertise
             </h4>
@@ -132,7 +132,7 @@ function DirectorCard({ director }: DirectorCardProps) {
                 </Badge>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Right side - Content */}
